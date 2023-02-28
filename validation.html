@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: aqua;
+            width: 500px;
+            height: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: blue;
+        }
+
+        input {
+            margin: 20px;
+            border-radius: 10px;
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>login form</h1>
+        <form action="" onclick="return validateform()">
+            <label for="username">username</label><br>
+            <input id="username" type="text"><br>
+            <p id="usearr"></p>
+            <label for="password">password</label><br>
+            <input id="password" type="password"><br>
+            <p id="passarr"></p>
+            <input type="submit" value="save data">
+        </form>
+    </div>
+    <script>
+        let username = document.getElementById('username');
+        let password = document.getElementById('password');
+        let ok = 1
+        function validateform() {
+            if (username.value == "") {
+                document.getElementById('usearr').innerHTML = 'user name is required'
+                ok = 0
+            }
+            else if (username.value.length < 4) {
+                document.getElementById('usearr').innerHTML = 'user name is requred min 4 letter'
+                ok = 0
+            }
+            else {
+                document.getElementById('usearr').innerHTML = ''
+                ok = 1
+            }
+            if (password.value == "") {
+                document.getElementById('passarr').innerHTML = 'password is required'
+                ok = 0
+                // event.preventDefault()
+            }
+
+          else  if (password.value.length < 8) {
+                document.getElementById('passarr').innerHTML = 'password is requred min 8 letter'
+                ok = 0
+                // event.preventDefault()
+            }
+
+           else if (password.value.search(/[0-9]/) == -1) {
+                document.getElementById('passarr').innerHTML = 'password is requred atleast one numerical'
+                ok = 0
+                // event.preventDefault()
+
+            }
+
+           else if (password.value.search(/[a-z]/) == -1) {
+                document.getElementById('passarr').innerHTML = 'password is requred atleast one lowercase'
+                ok = 0
+                // event.preventDefault()
+            }
+
+           else if (password.value.search(/[A-Z]/) == -1) {
+                document.getElementById('passarr').innerHTML = 'password is requred atleast one uppercase'
+                ok = 0
+                // event.preventDefault()
+            }
+
+           else if (password.value.search(/[!/@/#/$/%/^/&/*/,/~]/) == -1) {
+                document.getElementById('passarr').innerHTML = 'password is requred atleast one special char.'
+                ok = 0
+                // event.preventDefault()
+            }
+
+            else {
+                document.getElementById('passarr').innerHTML = ''
+                ok = 1
+            }
+            if (ok) {
+                return true
+            }
+            else {
+                return false
+            }
+        }        
+
+
+
+
+    </script>
+</body>
+
+</html>
