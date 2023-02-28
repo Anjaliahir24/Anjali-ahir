@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .container{
+        width: 1000px;
+        height:500px ;
+        margin: 40px auto;
+        display: flex;
+        overflow: hidden;
+
+    }
+    .img{
+        width: 100%;
+    }
+    .btn{
+        text-align: center;
+    }
+    .btn button{
+        
+        padding: 15px 30px;
+        border: 4px solid;
+        border-radius: 100px;
+      
+    }
+</style>
+
+<body>
+    <div class="container">
+
+        <img src="https://picsum.photos/id/201/1400/300" class="img" alt="">
+        <img src="https://picsum.photos/id/202/1400/300" class="img" alt="">
+        <img src="https://picsum.photos/id/203/1400/300" class="img" alt="">
+        <img src="https://picsum.photos/id/204/1400/300" class="img" alt="">
+        <img src="https://picsum.photos/id/206/1400/300" class="img" alt="">
+        <img src="https://picsum.photos/id/208/1400/300" class="img" alt="">
+    </div>
+    <div class="btn">
+        <button onclick=" gopre()">
+            <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <button onclick=" gonext()">
+            <i class="fa-solid fa-angle-right"></i>
+
+        </button>
+
+    </div>
+    <script>
+        const slide = document.querySelectorAll('.img')
+        let count = 0
+        slide.forEach(
+        (img,index) => {
+            img.style.left= `${index * 100}%`
+        })
+        const slideImage =() =>{
+            slide.forEach(
+                (img)=>{
+                    img.style.transform = `translateX(-${count * 100}%)`
+                }
+            )
+        }
+
+        const gopre = () =>{
+            count--
+            if(count == -1){
+                count=5
+            }
+            console.log(slide.length)
+            slideImage()
+
+        }
+        const gonext =()=>{
+            count++
+            if(count >=slide.length){
+                count=0
+            }
+            slideImage()
+        }
+
+    </script>
+
+</body>
+
+</html>
