@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //first example
+
+        function Bike(type){
+            this.type = type,
+            this.model = "new",
+            this.color = "black",
+            this.riding = function(){
+            console.log(`riding a ${this.model} ${this.color} ${this.type}  bike.`
+            );
+            }
+        }
+
+        const myBike = new Bike("FZ")
+        console.log(myBike);
+        myBike.Bike = function(){
+            console.log
+                console.log(`riding a ${this.model} ${this.color} ${this.type}  bike.` 
+            );
+        }
+        console.log(myBike.Bike());
+
+
+
+        //sec-example
+
+        function car(type){
+            this.type = type,
+            this.model = "new",
+            this.color = "white",
+            this.riding = function(){
+            console.log(`driving a ${this.model} ${this.color} ${this.type} car.`
+            );
+            }
+        }
+        const myCar = new car("Ferrari")
+        console.log(myCar);
+        myCar.car = function(){
+            console.log
+                console.log(` driving a ${this.model} ${this.color} ${this.type} car.` 
+            );
+        }
+        console.log(myCar.car());
+
+
+
+    </script>
+    
+</body>
+</html>
