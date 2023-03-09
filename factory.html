@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //first example
+      function carfactory(carprize){
+        return{
+          car:carprize,
+          brand:"BMW",
+
+          about(){
+            console.log("it\'s a new model of car");
+          }
+        }
+      }
+      const myCar = carfactory("new model")
+      console.log(carfactory().about());
+      myCar.about()
+      console.log(myCar);
+
+
+      //sec-example
+
+      function bikefactory(price,model){
+        return{
+            price:price,
+            model:model,
+          test(){
+            console.log("it\'s a time to a riding bike ");
+
+          } 
+            
+        }
+    }
+    const myBike = bikefactory( '10000',"FZ")
+    console.log(bikefactory().test());
+    myBike.test()
+    console.log(myBike);
+
+
+    </script>
+    
+</body>
+</html>
